@@ -1,0 +1,34 @@
+{
+  "name": "crockford-adsafe",
+  "version": "1.0.0",
+  "description": "ADsafe, the JavaScript widget framework for advertising and mashups",
+  "main": "adsafe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aramys/ADsafe.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Advertising",
+    "Widgets",
+    "Mashups"
+  ],
+  "author": "Douglas Crockford <douglas@crockford.com>",
+  "license": "SEE LICENSE IN README.md",
+  "bugs": {
+    "url": "https://github.com/aramys/ADsafe/issues"
+  },
+  "homepage": "https://github.com/aramys/ADsafe#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.7.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-minify": "0.0.15",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-template": "^4.0.0",
+    "gulp-util": "^3.0.8"
+  }
+}
