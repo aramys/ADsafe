@@ -1,3 +1,9 @@
+/**
+ * @preserve
+ * @author Douglas Crockford <douglas@crockford.com>
+ * @version <%= version %>
+ * @description <%= description %>
+ */
 // adsafe.js
 // 2016-02-07
 

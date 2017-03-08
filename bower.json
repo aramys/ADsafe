@@ -1,0 +1,25 @@
+{
+  "name": "crockford-adsafe",
+  "main": "adsafe.js",
+  "homepage": "https://github.com/aramys/ADsafe",
+  "version": "1.0.0",
+  "authors": [
+    "Douglas Crockford <douglas@crockford.com>",
+    "Aramys Miranda <aramys@acmeticketing.com>"
+  ],
+  "description": "ADsafe, the JavaScript widget framework for advertising and mashups",
+  "keywords": [
+    "JavaScript",
+    "Advertising",
+    "Widgets",
+    "Mashups"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
