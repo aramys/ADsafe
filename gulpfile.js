@@ -13,7 +13,7 @@ function getPackageJson() {
 
 /** Build Steps **/
 gulp.task('clean:build', function() {
-  return del(['build']);
+  return del(['dist', 'build']);
 });
 
 gulp.task('compress:build', ['clean:build'], function() {
@@ -35,7 +35,7 @@ gulp.task('compress:build', ['clean:build'], function() {
 
 /** Compile Steps **/
 gulp.task('clean:compile', ['bump'], function() {
-  return del(['dist']);
+  return del(['dist', 'build']);
 });
 
 gulp.task('compress:compile', ['clean:compile'], function() {

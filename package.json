@@ -1,6 +1,6 @@
 {
   "name": "crockford-adsafe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ADsafe, the JavaScript widget framework for advertising and mashups",
   "main": "adsafe.js",
   "scripts": {
