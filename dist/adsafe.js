@@ -1,7 +1,7 @@
 /**
  * @preserve
  * @author Douglas Crockford <douglas@crockford.com>
- * @version 1.0.2
+ * @version 1.0.3
  * @description ADsafe, the JavaScript widget framework for advertising and mashups
  */
 // adsafe.js
@@ -60,10 +60,23 @@
     that, thead, title, toLowerCase, toString, toUpperCase, tr, tt, type, u,
     ul, unwatch, value, valueOf, var, visibility, watch, window, writeln, x, y
 */
-
-var ADSAFE;
-ADSAFE = (function () {
+(function (root, factory) {
     "use strict";
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define('ADSAFE', factory);
+    } else if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.ADSAFE = factory(root);
+    }
+}(window, function () {
+
+var ADSAFE = (function () {
 
     var adsafe_id;      // The id of the current widget
     var adsafe_lib;     // The script libraries loaded by the current widget
@@ -1991,4 +2004,9 @@ ADSAFE = (function () {
         }
 
     };
+
 }());
+
+return window.ADSAFE = ADSAFE;
+
+}));

@@ -26,6 +26,7 @@ gulp.task('compress:build', ['clean:build'], function() {
         },
         exclude: ['tasks'],
         preserveComments: 'some',
+        mangle: false,
         ignoreFiles: ['.min.js']
       }))
     .pipe(sourcemaps.write())
@@ -46,6 +47,7 @@ gulp.task('compress:compile', ['clean:compile'], function() {
           min:'.min.js'
       },
       exclude: ['tasks'],
+      mangle: false,
       preserveComments: 'some',
       ignoreFiles: ['.min.js']
     }))
