@@ -2,7 +2,7 @@
   "name": "crockford-adsafe",
   "main": "adsafe.js",
   "homepage": "https://github.com/aramys/ADsafe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Douglas Crockford <douglas@crockford.com>",
     "Aramys Miranda <aramys@acmeticketing.com>"
