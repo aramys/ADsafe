@@ -4,20 +4,41 @@ var fs = require('fs')
     sourcemaps = require('gulp-sourcemaps'),
     bump = require('gulp-bump'),
     template = require('gulp-template'),
-    clean = require('gulp-clean'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    del = require('del');
 
 function getPackageJson() {
   return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 }
 
-gulp.task('clean', ['bump'], function() {
-  var s = gulp.src('app/tmp', {read: false})
-    .pipe(clean());
+/** Build Steps **/
+gulp.task('clean:build', function() {
+  return del(['build']);
+});
+
+gulp.task('compress:build', ['clean:build'], function() {
+  var s = gulp.src('src/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(minify({
+        ext: {
+            src:'.js',
+            min:'.min.js'
+        },
+        exclude: ['tasks'],
+        preserveComments: 'some',
+        ignoreFiles: ['.min.js']
+      }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('build'))
   return s;
 });
 
-gulp.task('compress', ['clean'], function() {
+/** Compile Steps **/
+gulp.task('clean:compile', ['bump'], function() {
+  return del(['dist']);
+});
+
+gulp.task('compress:compile', ['clean:compile'], function() {
   var s = gulp.src('src/*.js')
     .pipe(sourcemaps.init())
       .pipe(minify({
@@ -34,7 +55,7 @@ gulp.task('compress', ['clean'], function() {
   return s;
 });
 
-gulp.task('version', ['compress'], function() {
+gulp.task('version', ['compress:compile'], function() {
   var package = getPackageJson();
   
   gulp.src('dist/*.js')
@@ -54,3 +75,4 @@ gulp.task('bump', function(){
 
 gulp.task('compile', [ 'version' ]);
 
+gulp.task('default', [ 'compress:build' ])

@@ -1,6 +1,6 @@
 {
   "name": "crockford-adsafe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ADsafe, the JavaScript widget framework for advertising and mashups",
   "main": "adsafe.js",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/aramys/ADsafe#readme",
   "devDependencies": {
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.7.0",
     "gulp-clean": "^0.3.2",
