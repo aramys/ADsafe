@@ -40,17 +40,15 @@ gulp.task('clean:compile', ['bump'], function() {
 
 gulp.task('compress:compile', ['clean:compile'], function() {
   var s = gulp.src('src/*.js')
-    .pipe(sourcemaps.init())
-      .pipe(minify({
-        ext: {
-            src:'.js',
-            min:'.min.js'
-        },
-        exclude: ['tasks'],
-        preserveComments: 'some',
-        ignoreFiles: ['.min.js']
-      }))
-    .pipe(sourcemaps.write())
+    .pipe(minify({
+      ext: {
+          src:'.js',
+          min:'.min.js'
+      },
+      exclude: ['tasks'],
+      preserveComments: 'some',
+      ignoreFiles: ['.min.js']
+    }))
     .pipe(gulp.dest('dist'))
   return s;
 });
